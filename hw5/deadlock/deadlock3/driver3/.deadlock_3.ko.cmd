@@ -1,0 +1,1 @@
+cmd_/root/gjc_ldd/deadlock_3/driver/deadlock_3.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.2.0-29-generic/scripts/module-common.lds --build-id  -o /root/gjc_ldd/deadlock_3/driver/deadlock_3.ko /root/gjc_ldd/deadlock_3/driver/deadlock_3.o /root/gjc_ldd/deadlock_3/driver/deadlock_3.mod.o

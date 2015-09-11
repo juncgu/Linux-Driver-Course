@@ -1,0 +1,36 @@
+/*****************************
+ * EEL5934 ADV SYSTEM PROG
+ * Assignment3
+ * Juncheng Gu  5191-0572
+ * Feb23, 2015
+ *****************************/
+
+This code is modified from "s_04/lab5_dynamic_udev.c".
+
+The basic function of this code and "s_04/lab5_dynamic_udev.c" is:
+
+     Adapt the dynamic registration driver to use udev to create the device node on the fly.
+
+The operations for devices are:
+   read
+   write
+   open
+   release
+   lseek
+
+Modifications:
+
+1. add new data structure to organize the essential component.
+   struct asp_mycdrv{
+       struct list_head list;
+       struct cdev dev;
+       char *ramdisk;
+       struct semaphore sem;
+       int devNo; 
+   };
+
+2. Device nodes are created by the driver. All the device nodes are stored in the linked list--"struct list_head".
+
+3. A device cannot be opened concurrently.
+
+
